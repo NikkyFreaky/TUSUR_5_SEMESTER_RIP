@@ -14,7 +14,7 @@ COPY ./server .
 
 RUN npm rebuild bcrypt --build-from-source
 
-CMD ["sh", "-c", "sleep 40 && node app.js"]
+CMD ["sh", "-c", "sleep 15 && node app.js"]
 
 
 # Строим клиент
