@@ -29,3 +29,10 @@ RUN npm install
 COPY ./client .
 
 CMD ["npm", "run", "start"]
+
+
+FROM mysql:8.1.0
+
+ENV MYSQL_DATABASE=rip_db
+
+ENV MYSQL_ROOT_PASSWORD=02122004
