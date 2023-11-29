@@ -1,0 +1,32 @@
+version: "3"
+
+services:
+
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 02122004
+      MYSQL_DATABASE: rip_db
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 02122004
+
+  server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: server-builder
+    container_name: server_container
+    ports:
+      - "8000:8000"
+      - "8080:8080"
+
+  client:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: client-builder
+    container_name: client_container
+    ports:
+      - "3000:3000"
