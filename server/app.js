@@ -16,7 +16,7 @@ const salt = '$2b$10$3HVhKA2xxrCTEm4BKZ5oM.'
 
 const sequelize = new Sequelize(process.env.database, "root", process.env.password, {
     dialect: "mysql",
-    host: "localhost",
+    host: "db",
     port: 3306,
     define: {
       timestamps: false

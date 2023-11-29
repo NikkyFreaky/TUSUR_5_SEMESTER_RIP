@@ -14,7 +14,7 @@ COPY ./server .
 
 RUN npm rebuild bcrypt --build-from-source
 
-CMD ["node", "app.js"]
+CMD ["sh", "-c", "sleep 40 && node app.js"]
 
 
 # Строим клиент
@@ -29,10 +29,3 @@ RUN npm install
 COPY ./client .
 
 CMD ["npm", "run", "start"]
-
-
-FROM mysql:8.1.0
-
-ENV MYSQL_DATABASE=rip_db
-
-ENV MYSQL_ROOT_PASSWORD=02122004
